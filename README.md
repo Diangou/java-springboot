@@ -4,8 +4,8 @@ API de gestion de bibliotheque (Spring Boot + PostgreSQL) : adherents, cartes, l
 
 ## Membres du groupe
 
-- Diangou (dydypink09@gmail.com)
-- LauraKoNk (l.kokonyange@gmail.com)
+- Diangou CAMARA (diangou.cmr09@gmail.com)
+- Laura KOKONYANGE-NKASEI (l.kokonyange@gmail.com)
 
 ## Prerequis
 
