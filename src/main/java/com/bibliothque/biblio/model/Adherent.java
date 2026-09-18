@@ -1,10 +1,6 @@
 package com.bibliothque.biblio.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,18 +13,30 @@ public class Adherent {
     private Integer id;
     private String nom;
     private String prenom;
+    @ManyToOne
+    @JoinColumn(name = "carte_id")
+    Carte carte;
     // pas de relation JPA cote Livre -> non persiste pour l'instant
     @Transient
     private final List<Livre> livres;
+
+    public Carte getCarte() {
+        return carte;
+    }
+
+    public void setCarte(Carte carte) {
+        this.carte = carte;
+    }
 
     protected Adherent() {
         this.livres = new ArrayList<>();
     }
 
-    public Adherent(String nom, String prenom, List<Livre> livres) {
+    public Adherent(String nom, String prenom, List<Livre> livres, Carte carte) {
         this.nom = nom;
         this.prenom = prenom;
         this.livres = new ArrayList<>();
+        this.carte = carte;
     }
 
     public Adherent(String nom, String prenom) {

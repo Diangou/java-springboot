@@ -1,6 +1,8 @@
 package com.bibliothque.biblio.service;
 
+import com.bibliothque.biblio.enums.EtatCarte;
 import com.bibliothque.biblio.model.Adherent;
+import com.bibliothque.biblio.model.Carte;
 import com.bibliothque.biblio.repository.AdherentRepository;
 import org.springframework.stereotype.Service;
 
@@ -43,6 +45,13 @@ public class AdherentService {
             adherent.setPrenom(prenom);
             adherentRepository.save(adherent);
         }
+        return adherent;
+    }
+
+    public Adherent perteCarteAdherent(int id){
+        Adherent adherent = recupereAdherentParId(id);
+        adherent.getCarte().setEtat(EtatCarte.INACTIF);
+        adherentRepository.save(adherent);
         return adherent;
     }
 }
