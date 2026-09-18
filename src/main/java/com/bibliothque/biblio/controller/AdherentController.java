@@ -18,7 +18,7 @@ public class AdherentController {
 
     @PostMapping
     public Adherent ajouterAdherent(@RequestBody AdherentRequest request) {
-        return adherentService.ajouter(request.nom(), request.prenom());
+        return adherentService.ajouter(request.nom(), request.prenom(), request.carte());
     }
 
     @GetMapping
