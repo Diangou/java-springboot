@@ -3,9 +3,11 @@ package com.bibliothque.biblio.service;
 import com.bibliothque.biblio.enums.EtatCarte;
 import com.bibliothque.biblio.model.Carte;
 import com.bibliothque.biblio.repository.CarteRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CarteService {
 
     private final CarteRepository carteRepository;
