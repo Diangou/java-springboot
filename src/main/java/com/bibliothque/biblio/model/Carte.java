@@ -22,6 +22,14 @@ public class Carte {
         this.numeroSerie = numeroSerie;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getNumeroSerie() {
+        return numeroSerie;
+    }
+
     public Adherent getAdherent() {
         return adherent;
     }
